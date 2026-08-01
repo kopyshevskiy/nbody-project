@@ -1,0 +1,12 @@
+build/
+build-openmp/
+build-cuda/
+CMakeFiles/
+*.o
+*.a
+*.csv
+asset/
+.DS_Store
+*.dSYM/
+build-viewer/
+.vscode/
