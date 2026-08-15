@@ -132,7 +132,7 @@ BodiesAoS generate_spiral(std::size_t count, double gravitational_constant) {
     }
 
     constexpr double pi = 3.14159265358979323846;
-    constexpr std::size_t number_of_arms = 4;
+    constexpr std::size_t number_of_arms = 3;
     constexpr double number_of_rounds = 0.7;
     constexpr double outer_radius = 8.0;
     std::mt19937 generator(0);
