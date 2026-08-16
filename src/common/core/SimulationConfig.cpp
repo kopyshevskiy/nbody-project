@@ -39,8 +39,9 @@ std::string to_string(Implementation implementation) {
 }
 
 void validate_config(const SimulationConfig& config) {
-    if (config.scheme != "galaxy" && config.scheme != "circular") {
-        throw std::invalid_argument("scheme must be galaxy or circular");
+    if (config.scheme != "galaxy" && config.scheme != "spiral"
+        && config.scheme != "circular") {
+        throw std::invalid_argument("scheme must be galaxy, spiral or circular");
     }
     if (config.input_path.empty() && config.num_bodies == 0) {
         throw std::invalid_argument("the number of bodies must be greater than zero");
