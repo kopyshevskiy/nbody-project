@@ -44,7 +44,7 @@ void SerialAoS::computeOneIteration() {
     initIteration();
     computeBodiesAcceleration();
     bodies_.updatePositionsAndVelocities(accelerations, config_.dt);
-    time_ += config_.dt;
+    time_ += config_.dt * 0.5;
 }
 
 const BodiesAoS& SerialAoS::bodies() const {
