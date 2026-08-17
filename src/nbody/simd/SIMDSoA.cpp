@@ -128,7 +128,7 @@ SIMDSoA::SIMDSoA(const SimulationConfig& config)
           std::vector<double>(bodies_.getN())} {
     if (bodies_.getN() % 4 != 0) {
         throw std::invalid_argument(
-            "SIMDSoA requires a number of bodies multiple of four");
+            "SIMDSoA requires a number of bodies divisible by four");
     }
 }
 
