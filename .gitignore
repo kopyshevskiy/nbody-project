@@ -4,7 +4,7 @@ build-cuda/
 CMakeFiles/
 *.o
 *.a
-trajectory.csv
+/trajectory.csv
 .DS_Store
 *.dSYM/
 build-viewer/
