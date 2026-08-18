@@ -10,3 +10,4 @@ asset/
 *.dSYM/
 build-viewer/
 .vscode/
+*.log
