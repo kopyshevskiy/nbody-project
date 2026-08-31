@@ -1,0 +1,17 @@
+scaling,threads,bodies,steps,schedule,time_seconds
+strong,1,8192,100,static,28.5804
+strong,2,8192,100,static,15.5655
+strong,3,8192,100,static,13.4804
+strong,4,8192,100,static,12.1238
+strong,5,8192,100,dynamic,10.2632
+strong,6,8192,100,dynamic,10.2918
+strong,7,8192,100,dynamic,10.4692
+strong,8,8192,100,dynamic,10.2734
+weak,1,8192,100,static,27.204
+weak,2,11585,100,static,32.7462
+weak,3,14189,100,static,41.6962
+weak,4,16384,100,static,45.0212
+weak,5,18318,100,dynamic,53.7256
+weak,6,20066,100,dynamic,59.3388
+weak,7,21674,100,dynamic,70.0083
+weak,8,23170,100,dynamic,81.9905

@@ -1,0 +1,11 @@
+implementation,bodies,steps,time_seconds
+serial-soa,512,100,0.257157
+cuda,512,100,0.0699417
+serial-soa,1024,100,1.01106
+cuda,1024,100,0.133541
+serial-soa,2048,100,4.05855
+cuda,2048,100,0.238063
+serial-soa,4096,100,16.1576
+cuda,4096,100,0.405795
+serial-soa,8192,100,64.595
+cuda,8192,100,1.64498
