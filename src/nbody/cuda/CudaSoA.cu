@@ -7,7 +7,9 @@
 #include <string>
 #include <vector>
 
-constexpr int CUDA_BLOCK_SIZE = 256;
+#ifndef CUDA_BLOCK_SIZE
+#define CUDA_BLOCK_SIZE 256
+#endif
 
 void checkCuda(cudaError_t error, const char* operation) {
     if (error != cudaSuccess) {

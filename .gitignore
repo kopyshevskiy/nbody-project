@@ -1,6 +1,7 @@
 build/
 build-openmp/
 build-cuda/
+build-cuda-bs*/
 CMakeFiles/
 *.o
 *.a

@@ -22,6 +22,16 @@ option(NBODY_ENABLE_CUDA "Build the CUDA SoA implementation" OFF)
 option(NBODY_ENABLE_OPENGL "Build the OpenGL trajectory visualizer" OFF)
 
 if(NBODY_ENABLE_CUDA)
+    # On hosts with a newer glibc than the CUDA toolkit expects, glibc's
+    # C23 math extensions (cospi/sinpi/...) redeclare functions already
+    # declared by crt/math_functions.h with a conflicting exception
+    # specification. Those extensions are only pulled in via _GNU_SOURCE
+    # (the g++ default); dropping it avoids the conflict, and
+    # _DEFAULT_SOURCE is re-asserted so unrelated POSIX/C99 declarations
+    # (e.g. std::vswprintf) are not lost with it. This must be set before
+    # enable_language(CUDA), since CMake's own compiler-detection probe
+    # hits the same conflict otherwise.
+    set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -Xcompiler=-U_GNU_SOURCE -Xcompiler=-D_DEFAULT_SOURCE")
     enable_language(CUDA)
     find_package(CUDAToolkit REQUIRED)
 endif()
