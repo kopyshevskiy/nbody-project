@@ -9,17 +9,38 @@
 
 class SerialAoS : public SimulationNBodyInterface {
 protected:
-    std::vector<AccelerationAoS> accelerations;
+    std::vector<AccelerationAoS> accelerations; /*!< Array of acceleration structures. */
 
 public:
+    /*!
+     * \brief Constructor.
+     */
     explicit SerialAoS(const SimulationConfig& config);
+
+    /*!
+     * \brief Destructor.
+     */
     ~SerialAoS() override = default;
 
+    /*!
+     * \brief Compute one simulation iteration.
+     */
     void computeOneIteration() override;
+
+    /*!
+     * \brief AoS bodies getter.
+     */
     const BodiesAoS& bodies() const;
 
 protected:
+    /*!
+     * \brief Initialize acceleration buffers.
+     */
     void initIteration();
+
+    /*!
+     * \brief Compute bodies accelerations.
+     */
     void computeBodiesAcceleration();
 };
 

@@ -5,11 +5,18 @@
 
 class Timer {
 public:
+    /*!
+     * \brief Start the timer.
+     */
     void start() noexcept;
-    [[nodiscard]] double elapsed_seconds() const noexcept;
+
+    /*!
+     * \brief Elapsed time getter in seconds.
+     */
+    double elapsed_seconds() const noexcept;
 
 private:
-    std::chrono::steady_clock::time_point start_{};
+    std::chrono::steady_clock::time_point start_{}; /*!< Start time point. */
 };
 
 

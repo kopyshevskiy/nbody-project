@@ -8,17 +8,38 @@
 
 class OpenMPSoA : public SimulationNBodyInterface {
 protected:
-    AccelerationsSoA accelerations;
+    AccelerationsSoA accelerations; /*!< Structure of acceleration arrays. */
 
 public:
+    /*!
+     * \brief Constructor.
+     */
     explicit OpenMPSoA(const SimulationConfig& config);
+
+    /*!
+     * \brief Destructor.
+     */
     ~OpenMPSoA() override = default;
 
+    /*!
+     * \brief Compute one simulation iteration.
+     */
     void computeOneIteration() override;
+
+    /*!
+     * \brief SoA bodies getter.
+     */
     const BodiesSoA& bodies() const;
 
 protected:
+    /*!
+     * \brief Initialize acceleration buffers.
+     */
     void initIteration();
+
+    /*!
+     * \brief Compute bodies accelerations with OpenMP.
+     */
     void computeBodiesAcceleration();
 };
 

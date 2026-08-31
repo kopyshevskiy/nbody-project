@@ -7,17 +7,38 @@
 
 class SerialSoA : public SimulationNBodyInterface {
 protected:
-    AccelerationsSoA accelerations;
+    AccelerationsSoA accelerations; /*!< Structure of acceleration arrays. */
 
 public:
+    /*!
+     * \brief Constructor.
+     */
     explicit SerialSoA(const SimulationConfig& config);
+
+    /*!
+     * \brief Destructor.
+     */
     ~SerialSoA() override = default;
 
+    /*!
+     * \brief Compute one simulation iteration.
+     */
     void computeOneIteration() override;
+
+    /*!
+     * \brief SoA bodies getter.
+     */
     const BodiesSoA& bodies() const;
 
 protected:
+    /*!
+     * \brief Initialize acceleration buffers.
+     */
     void initIteration();
+
+    /*!
+     * \brief Compute bodies accelerations.
+     */
     void computeBodiesAcceleration();
 };
 

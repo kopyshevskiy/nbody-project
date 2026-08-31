@@ -9,22 +9,47 @@
 
 class SimulationNBodyInterface {
 public:
+    /*!
+     * \brief Constructor.
+     */
     explicit SimulationNBodyInterface(const SimulationConfig& config);
+
+    /*!
+     * \brief Destructor.
+     */
     virtual ~SimulationNBodyInterface() = default;
 
+    /*!
+     * \brief Compute one simulation iteration.
+     */
     virtual void computeOneIteration() = 0;
+
+    /*!
+     * \brief Run the complete simulation.
+     */
     virtual void run();
 
+    /*!
+     * \brief Number of bodies getter.
+     */
     std::size_t size() const;
+
+    /*!
+     * \brief Bodies getter.
+     */
     const Bodies<double>& getBodies() const;
+
+    /*!
+     * \brief Time step getter.
+     */
     double getDt() const;
 
 protected:
-    SimulationConfig config_;
-    PhysicsParameters physics_;
-    Bodies<double> bodies_;
-    double dt_{0.0};
-    double time_{0.0};
+    SimulationConfig config_;   /*!< Simulation configuration. */
+    PhysicsParameters physics_; /*!< Physical parameters. */
+    Bodies<double> bodies_;     /*!< Bodies object. */
+    double dt_{0.0};            /*!< Time step value. */
+    double time_{0.0};          /*!< Current simulation time. */
 };
 
 

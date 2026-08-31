@@ -6,10 +6,25 @@
 #include <cstddef>
 #include <string>
 
-[[nodiscard]] BodiesAoS load_initial_conditions(const std::string& path);
-[[nodiscard]] BodiesAoS generate_circular_orbit(std::size_t count);
-[[nodiscard]] BodiesAoS generate_galaxy(std::size_t count, double gravitational_constant);
-[[nodiscard]] BodiesAoS generate_spiral(std::size_t count, double gravitational_constant);
+/*!
+ * \brief Load bodies from an input file.
+ */
+BodiesAoS load_initial_conditions(const std::string& path);
+
+/*!
+ * \brief Generate bodies on a circular orbit.
+ */
+BodiesAoS generate_circular_orbit(std::size_t count);
+
+/*!
+ * \brief Generate a disk galaxy initial condition.
+ */
+BodiesAoS generate_galaxy(std::size_t count, double gravitational_constant);
+
+/*!
+ * \brief Generate a spiral galaxy initial condition.
+ */
+BodiesAoS generate_spiral(std::size_t count, double gravitational_constant);
 
 
 #endif
